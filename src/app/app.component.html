@@ -1,0 +1,75 @@
+
+  <form [formGroup]="locationForm" class="form" (submit)="submitCity()">
+    <input type="text" class="input" formControlName="city" placeholder="Enter City Here">
+    <button class="submit-btn" type="submit" >Search</button>
+    </form>
+  
+
+
+<div class="container">
+  <div class="upper-data">
+   @if(weatherData().data.values.temperature > 10) {
+     <img src="../assets/hot-day.jpg">
+   }
+   <!-- <img src="../assets/hot-day.jpg"> -->
+    @else if (weatherData().data.values.temperature <= 9) {
+
+     <img src="../assets/cold-day.jpg" >
+   }  @else {
+    <img src="../assets/hot-day.jpg">
+
+   }
+    <div class="weather-data">
+      <div class="location">{{weatherData().location.name}}</div>
+      
+        <div class="temperature"> {{(weatherData().data.values.temperature * 9/5) + 32 | number: '1.0-0'}}°F </div>
+      
+      
+    </div>
+  </div>
+  <div class="lower-data">
+    <div class="more-info-label">
+      More Information
+    </div>
+    <div class="more-info-container">
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/feels-like.png" >
+          <span>Feels Like</span>
+          <div class="info-block-value">
+            {{(weatherData().data.values.temperatureApparent * 9/5) + 32 | number: '1.0-0'}}°F
+          </div>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/rain.png" >
+          <span>Chance of Rain</span>
+          <div class="info-block-value">
+            {{weatherData().data.values.precipitationProbability | number: '1.0-0'}}%
+          </div>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/humidity.png" >
+          <span>Humidity</span>
+          <div class="info-block-value">
+            {{weatherData().data.values.humidity | number: '1.0-0'}}%
+          </div>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/wind.png" >
+          <span>Wind</span>
+          <div class="info-block-value">
+            {{weatherData().data.values.windSpeed / 1.609344 | number: '1.0-0'}} MPH
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet />

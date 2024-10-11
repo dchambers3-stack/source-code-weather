@@ -1,0 +1,184 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --light-blue: #87CEEB;
+    --dark-blue: #483D8B;
+    --light-gray: #D3D3D3;
+    --dark-gray: #A9A9A9;
+    --light-green: #90EE90;
+    --dark-green: #008000;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    height: 80vh;
+    background-color: var(--light-blue);
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px black;
+}
+
+.upper-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: black;
+}
+
+.lower-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    
+    
+
+}
+
+.upper-data img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    
+}
+
+.weather-data {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.location {
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.temperature {
+    color: white;
+    font-size: 4em;
+    text-align: center;
+    font-weight: 900;
+}
+
+.more-info-label {
+    color: white;
+
+}
+.more-info-container {
+    flex: 1;
+    background-color: var(--dark-blue);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+
+}
+
+.info-block {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.info-block-label {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.info-block-label img {
+    width: 1.5em;
+
+}
+.info-block-label span {
+    text-align: center;
+    color: white;
+}
+.info-label span {
+    color: white;
+    font-size: 0.8em;
+    
+    
+
+}
+.info-block-value {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+    font-size: 1.2em;
+}
+.submit-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin-left: 10px;
+}
+.submit-btn:hover {
+    background-color: var(--light-gray);
+    color: white;
+    transition: all 0.2s linear;
+}
